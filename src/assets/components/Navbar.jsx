@@ -42,8 +42,8 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div className="lg:bg-[#f4f4f2] bg-[#242124] w-full h-16 md:h-20 lg:h-24 flex gap-42 lg:gap-0 items-end fixed top-0 left-0 z-50 lg:shadow-lg pr-20 font-bold font-['Poppins'] text-md ">
-      <h1 className="lg:ml-20 ml-5 b-1 text-lg font-bold text-cyan-400 lg:text-cyan-800 flex">
+    <div className="lg:bg-[#f4f4f2] bg-[#242124] w-full h-16 md:h-20 lg:h-24 flex gap-33 lg:gap-0 items-end fixed top-0 left-0 z-50 lg:shadow-lg pr-20 font-bold font-['Poppins'] text-md ">
+      <h1 className="lg:ml-20 ml-5 mb-3 lg:mb-0 b-1 text-lg font-bold text-cyan-400 lg:text-cyan-800 flex">
         <span>{"<"}</span>JustindotDev <span>{"/>"}</span>
       </h1>
       <div className="hidden lg:flex justify-center items-center w-full mb-1 text-gray-800">

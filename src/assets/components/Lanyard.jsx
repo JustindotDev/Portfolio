@@ -31,6 +31,10 @@ export default function Lanyard({
   gravity = [0, -40, 0],
   fov = 20,
   transparent = true,
+  ropeJoint = 0.7,
+  scale = 3,
+  groupPosition = -1.2,
+  lineWidth = 1,
 }) {
   return (
     <div className="relative z-0 w-full h-screen flex justify-center items-center transform scale-100 origin-center">
@@ -50,7 +54,12 @@ export default function Lanyard({
           far={4}
         />
         <Physics gravity={gravity} timeStep={1 / 60}>
-          <Band />
+          <Band
+            ropeJoint={ropeJoint}
+            scale={scale}
+            groupPosition={groupPosition}
+            lineWidth={lineWidth}
+          />
         </Physics>
         <Environment blur={0.75}>
           <Lightformer
@@ -86,7 +95,14 @@ export default function Lanyard({
     </div>
   );
 }
-function Band({ maxSpeed = 50, minSpeed = 0 }) {
+function Band({
+  maxSpeed = 50,
+  minSpeed = 0,
+  ropeJoint,
+  scale,
+  groupPosition,
+  lineWidth,
+}) {
   const band = useRef(),
     fixed = useRef(),
     j1 = useRef(),
@@ -121,9 +137,9 @@ function Band({ maxSpeed = 50, minSpeed = 0 }) {
     () => typeof window !== "undefined" && window.innerWidth < 1024
   );
 
-  useRopeJoint(fixed, j1, [[0, 0, 0], [0, 0, 0], 0.7]);
-  useRopeJoint(j1, j2, [[0, 0, 0], [0, 0, 0], 0.7]);
-  useRopeJoint(j2, j3, [[0, 0, 0], [0, 0, 0], 0.7]);
+  useRopeJoint(fixed, j1, [[0, 0, 0], [0, 0, 0], ropeJoint]);
+  useRopeJoint(j1, j2, [[0, 0, 0], [0, 0, 0], ropeJoint]);
+  useRopeJoint(j2, j3, [[0, 0, 0], [0, 0, 0], ropeJoint]);
   useSphericalJoint(j3, card, [
     [0, 0, 0],
     [0, 2.4, 0],
@@ -210,8 +226,8 @@ function Band({ maxSpeed = 50, minSpeed = 0 }) {
         >
           <CuboidCollider args={[0.8, 1.125, 0.01]} />
           <group
-            scale={3}
-            position={[0, -1.2, -0.05]}
+            scale={scale} //2
+            position={[0, groupPosition, -0.05]} //0
             onPointerOver={() => hover(true)}
             onPointerOut={() => hover(false)}
             onPointerUp={(e) => (
@@ -254,7 +270,7 @@ function Band({ maxSpeed = 50, minSpeed = 0 }) {
           useMap
           map={texture}
           repeat={[-4, 1]}
-          lineWidth={1}
+          lineWidth={lineWidth} //0.7
         />
       </mesh>
     </>

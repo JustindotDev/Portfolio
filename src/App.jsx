@@ -24,7 +24,7 @@ function App() {
       {/* Landing page section */}
       <section id="home" className="flex w-full min-h-screen ">
         <motion.div
-          className="w-full lg:w-3/5 bg-[#242124] text-white relative pl-5 lg:px-20 py-12 flex flex-col justify-center rounded-r-3xl"
+          className="w-full lg:w-3/5 bg-[#242124] text-white relative pl-5 lg:px-20 py-35 lg:py-12 flex flex-col lg:justify-center rounded-r-3xl"
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1.5, ease: "easeOut" }}
@@ -43,19 +43,26 @@ function App() {
           </div>
 
           {/* Small Lanyard (Only on Small Screens) */}
-          <span className=" lg:hidden absolute top-0  left-25 right-0 w-full z-40 h-12 sm:w-16 sm:h-16 ">
-            <Lanyard position={[0, 0, 10]} fov={70} />
+          <span className=" lg:hidden absolute top-0  left-0 right-0 w-full z-40 h-12 sm:w-16 sm:h-16 ">
+            <Lanyard
+              position={[0, 0, 10]}
+              fov={45}
+              scale={2}
+              groupPosition={0}
+              lineWidth={0.5}
+              ropeJoint={1}
+            />
           </span>
 
-          <div className="relative z-10 max-w-3xl">
-            <div className="space-y-4">
-              <h1 className="text-2xl lg:text-4xl font-bold leading-tight mb-15 mt-35 lg:mt-0 lg:mb-0 ">
+          <div className="relative z-50 lg:z-10 max-w-3xl">
+            <div className="lg:space-y-4">
+              <h1 className="text-1xl lg:text-4xl font-bold leading-tight lg:mt-0  ">
                 Hey there! I'm
-                <span className="block text-3xl lg:text-5xl text-cyan-400 animate-glow drop-shadow-[0_0_15px_rgba(34,211,238,0.7)]">
+                <span className="block my-1 lg:my-0 text-2xl lg:text-5xl text-cyan-400 animate-glow drop-shadow-[0_0_15px_rgba(34,211,238,0.7)]">
                   JustindotDev
                 </span>
               </h1>
-              <h2 className="text-2xl lg:text-4xl font-bold flex items-center gap-x-4 ">
+              <h2 className="text-1xl lg:text-4xl font-bold flex items-center gap-x-4 ">
                 And I'm a <TypingEffect />
               </h2>
             </div>
