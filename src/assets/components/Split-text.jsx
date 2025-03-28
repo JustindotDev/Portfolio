@@ -29,7 +29,7 @@ const TypingEffect = () => {
   }, [charIndex, isDeleting, index]);
 
   return (
-    <h1 className=" inline-flex text-5xl font-bold text-cyan-400">
+    <h1 className=" inline-flex text-3xl lg:text-5xl font-bold text-cyan-400">
       {text} <span className="animate-ping">|</span> {/* Blinking cursor */}
     </h1>
   );

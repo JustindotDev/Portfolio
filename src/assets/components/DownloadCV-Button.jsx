@@ -22,7 +22,7 @@ const InteractiveButton = () => {
   return (
     <div className="relative">
       <div
-        className="glow-effect rounded-[20px] py-px inline-block"
+        className=" glow-effect rounded-[20px] py-px inline-block"
         style={{
           "--glow-color": isHovered ? "rgb(56 238 255)" : "rgb(34 211 238)",
           "--animation-speed": isActive ? "2s" : "4s",
@@ -36,9 +36,9 @@ const InteractiveButton = () => {
           onMouseUp={() => setIsActive(false)}
           onTouchStart={() => setIsActive(true)}
           onTouchEnd={() => setIsActive(false)}
-          className={`relative z-10 bg-gradient-to-b from-[#242124] to-[#2a292a] border border-[#363536] 
+          className={`hidden relative z-10 bg-gradient-to-b from-[#242124] to-[#2a292a] border border-[#363536] 
             text-cyan-400 text-lg px-8 py-4 rounded-xl font-bold transition-all duration-300 
-            flex items-center gap-3
+            lg:flex items-center gap-3
             ${
               isDownloading
                 ? "cursor-progress opacity-75"

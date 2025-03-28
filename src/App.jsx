@@ -20,11 +20,11 @@ import { motion } from "framer-motion";
 
 function App() {
   return (
-    <div className="flex flex-col w-full min-h-screen">
+    <div className="flex flex-col w-full min-h-screen overflow-x-hidden">
       {/* Landing page section */}
       <section id="home" className="flex w-full min-h-screen ">
         <motion.div
-          className="w-3/5 bg-[#242124] text-white relative px-20 py-12 flex flex-col justify-center rounded-r-3xl"
+          className="w-full lg:w-3/5 bg-[#242124] text-white relative pl-5 lg:px-20 py-12 flex flex-col justify-center rounded-r-3xl"
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1.5, ease: "easeOut" }}
@@ -42,21 +42,26 @@ function App() {
             <Pattern />
           </div>
 
+          {/* Small Lanyard (Only on Small Screens) */}
+          <span className=" lg:hidden absolute top-0  left-25 right-0 w-full z-40 h-12 sm:w-16 sm:h-16 ">
+            <Lanyard position={[0, 0, 10]} fov={70} />
+          </span>
+
           <div className="relative z-10 max-w-3xl">
             <div className="space-y-4">
-              <h1 className="text-4xl font-bold leading-tight">
+              <h1 className="text-2xl lg:text-4xl font-bold leading-tight mb-15 mt-35 lg:mt-0 lg:mb-0 ">
                 Hey there! I'm
-                <span className="block text-5xl text-cyan-400 animate-glow drop-shadow-[0_0_15px_rgba(34,211,238,0.7)]">
+                <span className="block text-3xl lg:text-5xl text-cyan-400 animate-glow drop-shadow-[0_0_15px_rgba(34,211,238,0.7)]">
                   JustindotDev
                 </span>
               </h1>
-              <h2 className="text-4xl font-bold flex items-center gap-x-4">
+              <h2 className="text-2xl lg:text-4xl font-bold flex items-center gap-x-4 ">
                 And I'm a <TypingEffect />
               </h2>
             </div>
 
-            <div className="mt-7 space-y-8">
-              <div className="flex gap-6">
+            <div className=" mt-7 space-y-8">
+              <div className="hidden lg:flex gap-6">
                 <a
                   href="https://www.instagram.com/_justiiiinn?igsh=MW5xbW9jM2ZuYjZ5Ng=="
                   target="_blank"
@@ -92,7 +97,7 @@ function App() {
           </div>
         </motion.div>
 
-        <div className="w-2/5 bg-[#f4f4f2] flex justify-center items-center p-8">
+        <div className="hidden w-2/5 bg-[#f4f4f2] lg:flex justify-center items-center p-8">
           <div className="w-full max-w-md">
             <Lanyard />
           </div>
@@ -282,5 +287,3 @@ function App() {
   );
 }
 export default App;
-
-// service_cha53ko
