@@ -17,10 +17,12 @@ import ProjectList from "./assets/components/Project-list.jsx";
 import ContactForm from "./assets/components/ContactForm.jsx";
 import DownloadCVButton from "./assets/components/DownloadCV-Button.jsx";
 import { motion } from "framer-motion";
+import RedirectToChrome from "./assets/components/RedirectChrome.jsx";
 
 function App() {
   return (
     <div className="flex flex-col min-w-full min-h-screen overflow-x-hidden">
+      <RedirectToChrome />
       {/* Landing page section */}
       <section id="home" className="flex w-full min-h-screen ">
         <motion.div
@@ -43,7 +45,7 @@ function App() {
           </div>
 
           {/* Small Lanyard (Only on Small Screens) */}
-          <span className=" lg:hidden absolute top-20  left-0 pl-32  pt-24   right-0 w-full z-30 h-12 sm:w-16 sm:h-16 ">
+          <span className=" lg:hidden absolute top-20  left-0 pl-36  pt-24   right-0 w-full z-30 h-12 sm:w-16 sm:h-16 ">
             <Lanyard
               position={[0, 0, 10]}
               fov={45}
