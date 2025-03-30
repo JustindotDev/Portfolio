@@ -20,7 +20,7 @@ import { motion } from "framer-motion";
 
 function App() {
   return (
-    <div className="flex flex-col w-full min-h-screen overflow-x-hidden">
+    <div className="flex flex-col min-w-full min-h-screen overflow-x-hidden">
       {/* Landing page section */}
       <section id="home" className="flex w-full min-h-screen ">
         <motion.div
@@ -43,27 +43,27 @@ function App() {
           </div>
 
           {/* Small Lanyard (Only on Small Screens) */}
-          <span className=" lg:hidden absolute top-0  left-0 right-0 w-full z-40 h-12 sm:w-16 sm:h-16 ">
+          <span className=" lg:hidden absolute top-20  left-0 pl-32  pt-24   right-0 w-full z-30 h-12 sm:w-16 sm:h-16 ">
             <Lanyard
               position={[0, 0, 10]}
               fov={45}
               scale={2}
               groupPosition={0}
               lineWidth={0.5}
-              ropeJoint={1}
+              ropeJoint={0.2}
             />
           </span>
 
-          <div className="relative z-50 lg:z-10 max-w-3xl">
+          <div className="relative z-40 lg:z-10 max-w-3xl lg:text-left">
             <div className="lg:space-y-4">
-              <h1 className="text-1xl lg:text-4xl font-bold leading-tight lg:mt-0  ">
+              <h1 className="text-2xl lg:text-4xl font-bold leading-tight lg:mt-0  ">
                 Hey there! I'm
-                <span className="block my-1 lg:my-0 text-2xl lg:text-5xl text-cyan-400 animate-glow drop-shadow-[0_0_15px_rgba(34,211,238,0.7)]">
+                <span className="block my-1 lg:my-0 text-3xl lg:text-5xl text-cyan-400 animate-glow drop-shadow-[0_0_15px_rgba(34,211,238,0.7)]">
                   JustindotDev
                 </span>
               </h1>
-              <h2 className="text-1xl lg:text-4xl font-bold flex items-center gap-x-4 ">
-                And I'm a <TypingEffect />
+              <h2 className="text-2xl lg:text-4xl font-bold flex  items-center gap-x-2 ">
+                And I'm a<TypingEffect />
               </h2>
             </div>
 

@@ -36,9 +36,9 @@ const InteractiveButton = () => {
           onMouseUp={() => setIsActive(false)}
           onTouchStart={() => setIsActive(true)}
           onTouchEnd={() => setIsActive(false)}
-          className={`hidden relative z-10 bg-gradient-to-b from-[#242124] to-[#2a292a] border border-[#363536] 
-            text-cyan-400 text-lg px-8 py-4 rounded-xl font-bold transition-all duration-300 
-            lg:flex items-center gap-3
+          className={` relative z-10 bg-gradient-to-b from-[#242124] to-[#2a292a] border border-[#363536] 
+            text-cyan-400 text-md lg:text-lg px-3 py-4 lg:px-8 rounded-xl font-bold transition-all duration-300 
+            flex items-center gap-3 mt-5 lg:mt-0
             ${
               isDownloading
                 ? "cursor-progress opacity-75"
