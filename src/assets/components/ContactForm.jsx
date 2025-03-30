@@ -46,15 +46,15 @@ const ContactForm = () => {
 
   return (
     <motion.div
-      className="w-3/5 max-h-full grid justify-center"
+      className="w-full lg:w-3/5 max-h-full grid justify-center mt-10 lg:mt-0"
       initial={{ opacity: 0, x: 50 }}
       whileInView={{ opacity: 1, x: 0 }}
       transition={{ duration: 1, ease: "easeOut" }}
       viewport={{ once: true, amount: 0.3 }} // Triggers animation when 30% is visible
     >
-      <div className="w-160 h-130 py-5 grid justify-center shadow-lg shadow-gray-900/30 rounded-3xl">
-        <form ref={form} onSubmit={sendEmail} className="w-145">
-          <div className="flex gap-65 font-semibold text-cyan-900">
+      <div className="min-w-full lg:w-160 h-130 py-5 flex lg:grid justify-center lg:shadow-lg lg:shadow-gray-900/30 lg:rounded-3xl">
+        <form ref={form} onSubmit={sendEmail} className="w-full lg:w-145 grid">
+          <div className="flex gap-35 lg:gap-65 font-semibold text-cyan-900 ">
             <label htmlFor="name" className="mt-2">
               Name
             </label>
@@ -62,23 +62,23 @@ const ContactForm = () => {
               Phone
             </label>
           </div>
-          <div className="flex gap-5">
+          <div className="flex gap-5 ">
             <input
               name="name"
               type="text"
               required
               placeholder="Your Name"
-              className="w-70 h-12 p-2 rounded-md border-2 border-cyan-900 mt-1 placeholder:text-sm outline-cyan-700"
+              className="w-40 lg:w-70 h-12 p-2 rounded-md border-2 border-cyan-900 mt-1 placeholder:text-sm outline-cyan-700"
             />
             <input
               name="phone"
               type="number"
               required
               placeholder="Phone Number"
-              className="w-70 h-12 p-2 rounded-md border-2 border-cyan-900 mt-1 placeholder:text-sm outline-cyan-700"
+              className="w-40 lg:w-70 h-12 p-2 rounded-md border-2 border-cyan-900 mt-1 placeholder:text-sm outline-cyan-700"
             />
           </div>
-          <div className="flex gap-66 mt-5 font-semibold text-cyan-900">
+          <div className="flex gap-36 lg:gap-66 mt-5 font-semibold text-cyan-900">
             <label htmlFor="email">Email</label>
             <label htmlFor="subject">Subject</label>
           </div>
@@ -88,14 +88,14 @@ const ContactForm = () => {
               type="email"
               required
               placeholder="Your Email"
-              className="w-70 h-12 p-2 rounded-md border-2 border-cyan-900 mt-1 placeholder:text-sm outline-cyan-700"
+              className="w-40 lg:w-70 h-12 p-2 rounded-md border-2 border-cyan-900 mt-1 placeholder:text-sm outline-cyan-700"
             />
             <input
               name="subject"
               type="text"
               required
               placeholder="Subject"
-              className="w-70 h-12 p-2 rounded-md border-2 border-cyan-900 mt-1 placeholder:text-sm outline-cyan-700"
+              className="w-40 lg:w-70 h-12 p-2 rounded-md border-2 border-cyan-900 mt-1 placeholder:text-sm outline-cyan-700"
             />
           </div>
           <label htmlFor="message" className="mt-5 font-semibold text-cyan-900">
@@ -104,7 +104,7 @@ const ContactForm = () => {
           <textarea
             name="message"
             placeholder="Your Message"
-            className="w-145 max-w-145 h-45 p-3 pt-2 rounded-md border-2 border-cyan-900 resize-none leading-tight mt-1 placeholder:text-sm outline-cyan-700"
+            className="w-85 max-w-85 lg:w-145 lg:max-w-145 h-45 p-3 pt-2 rounded-md border-2 border-cyan-900 resize-none leading-tight mt-1 placeholder:text-sm outline-cyan-700"
           ></textarea>
           <button
             type="submit"
@@ -114,7 +114,7 @@ const ContactForm = () => {
             {/* Left Arrow (Initially Hidden) */}
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5 absolute left-48 opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all duration-300"
+              className="h-5 w-5 absolute left-15 lg:left-48 opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all duration-300"
               viewBox="0 -1 20 20"
               fill="currentColor"
             >
@@ -133,7 +133,7 @@ const ContactForm = () => {
             {/* Right Arrow (Initially Visible) */}
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5 absolute right-48 opacity-100 group-hover:opacity-0 group-hover:translate-x-2 transition-all duration-300"
+              className="h-5 w-5 absolute right-15 lg:right-48 opacity-100 group-hover:opacity-0 group-hover:translate-x-2 transition-all duration-300"
               viewBox="0 -1 20 20"
               fill="currentColor"
             >

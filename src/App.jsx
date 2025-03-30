@@ -26,7 +26,7 @@ function App() {
       {/* Landing page section */}
       <section id="home" className="flex w-full min-h-screen ">
         <motion.div
-          className="w-full lg:w-3/5 bg-[#242124] text-white relative pl-5 lg:px-20 py-35 lg:py-12 flex flex-col lg:justify-center rounded-r-3xl"
+          className="w-full lg:w-3/5 bg-[#242124] text-white relative pl-5 lg:px-20 py-35 lg:py-12 flex flex-col lg:justify-center lg:rounded-r-3xl"
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1.5, ease: "easeOut" }}
@@ -116,17 +116,17 @@ function App() {
       {/* About me section */}
       <section
         id="about"
-        className="w-full h-screen flex flex-col pt-5 scroll-mt-24"
+        className="w-full h-screen flex flex-col lg:pt-5 scroll-mt-24"
       >
-        <div className="flex spt-10 h-full">
+        <div className=" flex flex-col lg:flex-row lg:pt-10 h-full">
           <motion.div
-            className="w-2/5 bg-[#f4f4f2] flex flex-col"
+            className="w-full lg:w-2/5 bg-[#f4f4f2] flex flex-col"
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
             viewport={{ once: true, amount: 0.3 }} // Triggers animation when 30% is visible
           >
-            <h1 className="text-cyan-900 text-3xl font-bold ml-22 mt-10">
+            <h1 className="text-cyan-900 text-3xl font-bold lg:ml-22 mt-5 lg:mt-10 text-center lg:text-left">
               About me
             </h1>
             <div className="  flex justify-center items-center mx-22 mt-10">
@@ -152,7 +152,7 @@ function App() {
                 }
               />
             </div>
-            <div className="flex gap-4 justify-center mt-2">
+            <div className="flex gap-4 justify-center mt-2 ">
               <div className="text-center">
                 <span className="text-2xl font-bold text-cyan-900 ">3+</span>
                 <p className="text-xs text-gray-600">Months Experience</p>
@@ -169,14 +169,16 @@ function App() {
           </motion.div>
 
           <motion.div
-            className="w-3/5 bg-[#242124] flex flex-col text-white justify-center pl-20 rounded-l-3xl pt-10"
+            className="w-full lg:w-3/5 bg-[#242124] flex flex-col text-white lg:justify-center pl-5 pt-5 lg:pl-20 lg:rounded-l-3xl lg:pt-10 mt-5 lg:mt-0"
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
             viewport={{ once: true, amount: 0.3 }} // Triggers animation when 30% is visible
           >
-            <h1 className="text-3xl font-bold">Hey, I'm Justin Acebedo</h1>
-            <p className="text-lg pt-5 w-130">
+            <h1 className="text-2xl lg:text-3xl font-bold">
+              Hey, I'm Justin Acebedo
+            </h1>
+            <p className="text-md lg:text-lg pt-5 lg:w-130 w-80 text-justify ">
               I build modern, secure, and user-friendly web applications that
               enhance digital experiences. With a passion for clean code and
               innovative solutions, I specialize in creating responsive and
@@ -188,7 +190,9 @@ function App() {
                 target="_blank"
                 className="group inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 transition-colors duration-300"
               >
-                <span className="text-md font-medium">Learn more about me</span>
+                <span className="text-sm lg:text-md font-medium">
+                  Learn more about me
+                </span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-5 w-5 transform group-hover:translate-x-1 transition-transform duration-300"
@@ -204,11 +208,13 @@ function App() {
               </a>
             </div>
             <div className="mt-5">
-              <h1 className="text-3xl font-bold flex items-center gap-3">
+              <h1 className="text-2xl lg:text-3xl font-bold flex items-center gap-3">
                 Tech Stack
                 <span className="text-cyan-400 text-xl">{"</>"}</span>
               </h1>
-              <p className="text-gray-400 text-md">Technologies I work with</p>
+              <p className="text-gray-400 lg:text-md text-sm">
+                Technologies I work with
+              </p>
               <TechStack autoplay={true} pauseOnHover={true} />
             </div>
           </motion.div>
@@ -218,7 +224,7 @@ function App() {
       {/* My Works section */}
       <section
         id="works"
-        className="w-full max-h-[1200px] flex flex-col mt-10 item-center scroll-mt-24"
+        className="w-full max-h-[1200px] flex flex-col mt-35 lg:mt-10 item-center scroll-mt-24"
       >
         <motion.div
           className="flex justify-center items-center pt-10"
@@ -227,7 +233,7 @@ function App() {
           transition={{ duration: 1, ease: "easeOut" }}
           viewport={{ once: true, amount: 0.3 }} // Triggers animation when 30% is visible
         >
-          <h1 className="text-3xl font-bold text-cyan-900 border-b-5 border-cyan-900 w-5xl text-center pb-5">
+          <h1 className="text-3xl font-bold text-cyan-900 lg:border-b-5 border-cyan-900 w-5xl text-center pb-5">
             My Works
           </h1>
         </motion.div>
@@ -249,10 +255,10 @@ function App() {
           <h1 className="text-3xl font-bold text-cyan-900 ">Contact me</h1>
         </motion.div>
 
-        <div className=" flex justify-center items-center mt-5">
+        <div className="w-full flex flex-col lg:flex-row  justify-center items-center mt-5  ">
           {/* Contacts */}
           <motion.div
-            className="w-2/5 max-h-full flex flex-col justify-center items-center"
+            className="w-full lg:w-2/5 max-h-full flex flex-col justify-center items-center"
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}

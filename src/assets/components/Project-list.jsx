@@ -70,7 +70,7 @@ const ProjectList = () => {
       transition={{ duration: 1, ease: "easeOut" }}
       viewport={{ once: true, amount: 0.3 }} // Triggers animation when 30% is visible
     >
-      <div className=" w-5xl max-h-[1200px] overflow-hidden flex flex-col  self-center bg-[#f4f4f2] text-white">
+      <div className=" w-full lg:w-5xl max-h-[1200px] overflow-hidden flex flex-col  self-center bg-[#f4f4f2] text-white">
         {projects
           .slice(
             currentPage * projectsPerPage,
@@ -79,9 +79,9 @@ const ProjectList = () => {
           .map((project, index) => (
             <div
               key={index}
-              className="bg-[#242124] text-white mt-5 py-5 rounded-lg shadow-lg flex flex-col"
+              className="bg-[#242124] text-white mt-5 py-5 lg:rounded-lg shadow-lg flex flex-col"
             >
-              <div className="flex justify-center items-center gap-10 ">
+              <div className="flex flex-col lg:flex-row justify-center items-center lg:gap-10 ">
                 <img
                   src={project.logo}
                   alt="Thumbnail"
@@ -89,17 +89,19 @@ const ProjectList = () => {
                 />
 
                 <div className="flex flex-col gap-3">
-                  <h1 className="text-3xl font-bold">{project.title}</h1>
-                  <p className="w-150 text-gray-300 text-sm">
+                  <h1 className="text-3xl font-bold text-center lg:text-left">
+                    {project.title}
+                  </h1>
+                  <p className="w-80 lg:w-150 text-gray-300 text-sm ml-10 lg:ml-0 text-justify">
                     {project.description}
                   </p>
 
-                  <p className="text-gray-400 text-sm">
+                  <p className="text-gray-400 text-sm pl-10 lg:pl-0">
                     Built With{" "}
                     <span className="text-cyan-400 text-sm">{" </>"}</span>
                   </p>
 
-                  <div className="flex flex-wrap gap-4">
+                  <div className="flex flex-wrap gap-4 pl-10 lg:pl-0 w-90 lg:w-full">
                     {project.techStack.map((tech, i) => (
                       <div key={i} className="flex flex-col items-center">
                         <img
@@ -114,7 +116,7 @@ const ProjectList = () => {
                     ))}
                   </div>
 
-                  <div className="flex justify-between">
+                  <div className="flex justify-between pl-10 lg:pl-0">
                     <a
                       href={project.projectLink}
                       className="group inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 transition-colors duration-300"
@@ -151,7 +153,7 @@ const ProjectList = () => {
           ))}
 
         {/* Pagination Button */}
-        <div className="flex gap-2 mt-2">
+        <div className="flex gap-2 mt-2 ml-5 lg:ml-0">
           {Array.from({ length: Math.min(3, totalPages) }, (_, i) => {
             let pageIndex;
 

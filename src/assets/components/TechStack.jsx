@@ -21,7 +21,7 @@ const RollingGallery = ({ autoplay = true, pauseOnHover = true }) => {
 
   return (
     <div
-      className="relative h-[180px] w-full overflow-hidden"
+      className="relative h-[110px] lg:h-[180px] w-full overflow-hidden"
       onMouseEnter={() => pauseOnHover && setIsHovered(true)}
       onMouseLeave={() => pauseOnHover && setIsHovered(false)}
     >
@@ -41,14 +41,14 @@ const RollingGallery = ({ autoplay = true, pauseOnHover = true }) => {
           {duplicatedImages.map((url, i) => (
             <motion.div
               key={i}
-              className="relative h-[70px] min-w-[70px] bg-cyan-900 rounded-lg flex items-center justify-center"
+              className="relative h-[50px] min-w-[50px] lg:h-[70px] lg:min-w-[70px] bg-cyan-900 rounded-lg flex items-center justify-center"
               whileHover={{ scale: 1.1 }}
               transition={{ duration: 0.2 }}
             >
               <motion.img
                 src={url}
                 alt={`Tech stack item ${i}`}
-                className="h-[50px] w-[50px] object-contain"
+                className="h-[35px] w-[35px] lg:h-[50px] lg:w-[50px] object-contain"
                 loading="lazy"
               />
             </motion.div>
