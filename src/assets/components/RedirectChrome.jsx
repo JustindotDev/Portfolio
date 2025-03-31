@@ -8,7 +8,7 @@ const RedirectToChrome = () => {
     if (userAgent.includes("FBAN") || userAgent.includes("FBAV")) {
       // Redirect to Chrome
       window.location.href =
-        "intent://justindotdev-personal-portfolio.vercel.app/#Intent;scheme=https;package=com.android.chrome;end;";
+        "intent://justindotdev.vercel.app/#Intent;scheme=https;package=com.android.chrome;end;";
     }
   }, []);
 
