@@ -4,7 +4,7 @@ const InteractiveButton = () => {
   const [isDownloading, setIsDownloading] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const [isActive, setIsActive] = useState(false);
-  const [isButtonEnabled, setIsButtonEnabled] = useState(false); // Change to true when ready
+  const [isButtonEnabled, setIsButtonEnabled] = useState(true); // Change to true when ready
 
   const handleDownload = () => {
     if (!isDownloading && isButtonEnabled) {
@@ -12,8 +12,8 @@ const InteractiveButton = () => {
       setTimeout(() => {
         setIsDownloading(false);
         const link = document.createElement("a");
-        link.href = "/path/to/cv.pdf";
-        link.download = "cv.pdf";
+        link.href = "/Resume-Justin Acebedo.pdf";
+        link.download = "Resume-Justin Acebedo.pdf";
         link.click();
       }, 2000);
     }
