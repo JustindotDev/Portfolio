@@ -1,5 +1,4 @@
 import { useState } from "react";
-import logo from "../Img/logo.png";
 import { motion } from "framer-motion";
 import { MdNavigateNext, MdNavigateBefore } from "react-icons/md";
 
@@ -8,7 +7,7 @@ const projects = [
     title: "Crypto Nest",
     description:
       "Crypto Nest is a personal project designed to provide a seamless and hassle-free experience for monitoring cryptocurrency holdings across multiple wallets. It enables users to track their assets in real time—all within a single, intuitive interface. With a focus on convenience and efficiency, this project aims to simplify crypto portfolio management for both beginners and experienced traders.",
-    logo: logo, // Replace with the actual image path
+    logo: "./Cryp N.svg",
     techStack: [
       {
         src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
@@ -25,6 +24,14 @@ const projects = [
       {
         src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
         name: "React",
+      },
+      {
+        src: "https://user-images.githubusercontent.com/958486/218346783-72be5ae3-b953-4dd7-b239-788a882fdad6.svg",
+        name: "Zustand",
+      },
+      {
+        src: "https://www.vectorlogo.zone/logos/chakra-ui/chakra-ui-icon.svg",
+        name: "Chakra UI",
       },
       {
         src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg",
@@ -45,6 +52,60 @@ const projects = [
     ],
     projectLink: "#",
     codeLink: "https://github.com/JustindotDev/CryptoNest",
+  },
+  {
+    title: "Chat App",
+    description:
+      "A real-time chat application that enables direct messaging between users. It supports user authentication, message history, typing indicators, and text and image messages.",
+    logo: "./chat-svgrepo-com.svg",
+    techStack: [
+      {
+        src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
+        name: "HTML",
+      },
+      {
+        src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
+        name: "CSS",
+      },
+      {
+        src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+        name: "JavaScript",
+      },
+      {
+        src: "https://raw.githubusercontent.com/mui/material-ui/master/docs/public/static/logo.png",
+        name: "Material UI",
+      },
+      {
+        src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+        name: "React",
+      },
+      {
+        src: "https://user-images.githubusercontent.com/958486/218346783-72be5ae3-b953-4dd7-b239-788a882fdad6.svg",
+        name: "Zustand",
+      },
+      {
+        src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+        name: "Node.js",
+      },
+      {
+        src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
+        name: "Express",
+      },
+      {
+        src: "./socketio-icon.svg",
+        name: "Socket.IO",
+      },
+      {
+        src: "https://cdn.worldvectorlogo.com/logos/jwt-3.svg",
+        name: "JWT",
+      },
+      {
+        src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
+        name: "MongoDB",
+      },
+    ],
+    projectLink: "#",
+    codeLink: "https://github.com/JustindotDev/Chat-App",
   },
 ];
 
@@ -85,7 +146,7 @@ const ProjectList = () => {
                 <img
                   src={project.logo}
                   alt="Thumbnail"
-                  className="w-70 h-60 bg-cyan-900 rounded-lg"
+                  className="w-60 h-50 bg-transparent rounded-lg "
                 />
 
                 <div className="flex flex-col gap-3">
