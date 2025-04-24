@@ -8,4 +8,3 @@ Welcome to my personal portfolio repository. This space showcases my professiona
 - [Projects](#projects)
 - [Skills & Technologies](#skills--technologies)
 - [Contact](#contact)
-

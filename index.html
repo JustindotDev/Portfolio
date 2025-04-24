@@ -12,11 +12,7 @@
     />
     <meta
       name="description"
-      content="Welcome to my personal portfolio. This space showcases my professional journey, projects, skills, and ways to connect with me."
-    />
-    <meta
-      name="keywords"
-      content="Web Developer, React, JavaScript, JustindotDev Portfolio, Entry Level Developer, JustindotDev, Junior Developer, Frontend Developer, Backend Developer, Full Stack Developer"
+      content="Justin Acebedo is a full stack web developer specializing in React, Express, Node, and clean, modern web apps. Explore his portfolio, projects, and get in touch."
     />
     <meta property="og:title" content="Justin's Portfolio" />
     <meta
@@ -31,8 +27,61 @@
     <meta property="og:type" content="website" />
 
     <title>JustindotDev - Portfolio</title>
+
+    <style>
+      /* Loader Styles */
+      .loader {
+        position: fixed;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #121212;
+        color: white;
+        z-index: 50;
+        opacity: 1;
+        transition: opacity 0.5s ease-in-out 2s;
+        font-family: "Poppins", sans-serif;
+      }
+
+      .loader.hidden {
+        opacity: 0;
+      }
+
+      .loader .text {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #22d3ee;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        opacity: 1;
+        animation: fadeInOut 1s ease-in-out infinite alternate;
+      }
+
+      /* Blinking text effect */
+      @keyframes fadeInOut {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0;
+        }
+      }
+    </style>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
+    <div class="loader" id="loader">
+      <div class="text">&lt;JustindotDev /&gt;</div>
+    </div>
+
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
